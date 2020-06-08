@@ -1,0 +1,14 @@
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\bin\Debug\BanSachQuaMang.exe.config
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\bin\Debug\BanSachQuaMang.exe
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\bin\Debug\BanSachQuaMang.pdb
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csprojAssemblyReference.cache
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmAccountProfile.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmHome.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmLogin.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.MainForm.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.Properties.Resources.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csproj.GenerateResource.cache
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csproj.CoreCompileInputs.cache
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.exe
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.pdb
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmAdmin.resources
