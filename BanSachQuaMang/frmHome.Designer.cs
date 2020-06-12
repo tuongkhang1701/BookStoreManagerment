@@ -94,11 +94,11 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tpTT = new System.Windows.Forms.TabPage();
             this.lvTT = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BookName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NumPage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CTPH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpPDB = new System.Windows.Forms.TabPage();
             this.lvPDB = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -120,6 +120,7 @@
             this.lvNSTH = new System.Windows.Forms.ListView();
             this.tpMH = new System.Windows.Forms.TabPage();
             this.lvMHBOOK = new System.Windows.Forms.ListView();
+            this.NCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -787,11 +788,12 @@
             // lvTT
             // 
             this.lvTT.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader4});
+            this.BookName,
+            this.NumPage,
+            this.DonGia,
+            this.TG,
+            this.CTPH,
+            this.NCC});
             this.lvTT.GridLines = true;
             this.lvTT.HideSelection = false;
             this.lvTT.Location = new System.Drawing.Point(6, 6);
@@ -801,28 +803,28 @@
             this.lvTT.UseCompatibleStateImageBehavior = false;
             this.lvTT.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // BookName
             // 
-            this.columnHeader1.Text = "Tên sách";
-            this.columnHeader1.Width = 250;
+            this.BookName.Text = "Tên sách";
+            this.BookName.Width = 250;
             // 
-            // columnHeader2
+            // NumPage
             // 
-            this.columnHeader2.Text = "Số trang";
+            this.NumPage.Text = "Số trang";
             // 
-            // columnHeader3
+            // TG
             // 
-            this.columnHeader3.Text = "Tác giả";
-            this.columnHeader3.Width = 90;
+            this.TG.Text = "Tác giả";
+            this.TG.Width = 90;
             // 
-            // columnHeader5
+            // CTPH
             // 
-            this.columnHeader5.Text = "Công ty phát hành";
-            this.columnHeader5.Width = 120;
+            this.CTPH.Text = "Công ty phát hành";
+            this.CTPH.Width = 120;
             // 
-            // columnHeader4
+            // DonGia
             // 
-            this.columnHeader4.Text = "Đơn giá";
+            this.DonGia.Text = "Đơn giá";
             // 
             // tpPDB
             // 
@@ -1015,6 +1017,11 @@
             this.lvMHBOOK.TabIndex = 0;
             this.lvMHBOOK.UseCompatibleStateImageBehavior = false;
             // 
+            // NCC
+            // 
+            this.NCC.Text = "Nhà cung cấp";
+            this.NCC.Width = 120;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1148,11 +1155,11 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel30;
         private System.Windows.Forms.ListView lvTT;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader BookName;
+        private System.Windows.Forms.ColumnHeader NumPage;
+        private System.Windows.Forms.ColumnHeader TG;
+        private System.Windows.Forms.ColumnHeader DonGia;
+        private System.Windows.Forms.ColumnHeader CTPH;
         private System.Windows.Forms.ListView lvPDB;
         private System.Windows.Forms.ListView lvAHABOOKS;
         private System.Windows.Forms.ListView lvGB;
@@ -1168,5 +1175,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader NCC;
     }
 }

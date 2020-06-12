@@ -45,41 +45,39 @@ namespace BanSachQuaMang
 
         void loadBook()
         {
+            
             List<Book> bookList = BookDAO.Instance.loadBookList();
             CultureInfo culture = new CultureInfo("vi-VN");
             Thread.CurrentThread.CurrentCulture = culture;
+
             foreach (Book item in bookList)
             {
-                /*Button btn = new Button() {Width = BookDAO.Width, Height = BookDAO.Height };
-                btn.Text = item.NameBook + Environment.NewLine + item.Price;*/
-
-                /*CheckBox checkBox = new CheckBox() { Width = BookDAO.Width};
-                checkBox.Text = item.NameBook + item.Price + Environment.NewLine;
-                lvTT.Controls.Add(checkBox);*/
-
                 ListViewItem listViewItem = new ListViewItem(item.NameBook);
                 
                 listViewItem.SubItems.Add(item.SoTrang.ToString());
-                //listViewItem.SubItems.Add(item.TenTG);
-                //listViewItem.SubItems.Add(item.TenCongTy);
-                listViewItem.SubItems.Add(item.Price.ToString("c"));
+                listViewItem.SubItems.Add(item.Price.ToString());
+                listViewItem.SubItems.Add(item.TenTG);
+                listViewItem.SubItems.Add(item.TenCongTy);
+                listViewItem.SubItems.Add(item.TenNCC);
+                
+                
                 lvTT.Items.Add(listViewItem);
 
 
             }
-            foreach (Book item in bookList)
+            /*foreach (TacGia item in tacgiaList)
             {
                 
-                ListViewItem listViewItem = new ListViewItem(item.NameBook);
+                ListViewItem listViewItem = new ListViewItem(item.TenTG);
 
-                listViewItem.SubItems.Add(item.SoTrang.ToString());
+                listViewItem.SubItems.Add(item.TenTG.ToString());
                 //listViewItem.SubItems.Add(item.TenTG);
                 //listViewItem.SubItems.Add(item.TenCongTy);
-                listViewItem.SubItems.Add(item.Price.ToString("c"));
+                //listViewItem.SubItems.Add(item.Price.ToString("c"));
                 
-                lvPDB.Items.Add(listViewItem);
+                lvTT.Items.Add(listViewItem);
 
-            }
+            }*/
         }
 
         //tạm

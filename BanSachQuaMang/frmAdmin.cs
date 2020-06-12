@@ -334,6 +334,11 @@ namespace BanSachQuaMang
             cb.DataSource = AccountTypeDAO.Instance.getListAccType();
             cb.DisplayMember = "Name";
         }
+        List<Account> seachAccountByUserName(string userName)
+        {
+            List<Account> list = AccountDAO.Instance.searchAccoutByUserName(userName);
+            return list;
+        }
         #endregion
 
         #region Event Account
@@ -400,6 +405,12 @@ namespace BanSachQuaMang
         {
             string userName = txbUserName.Text;
             resetPass(userName);
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+
+            accountList.DataSource = seachAccountByUserName(txbSearch.Text);
         }
     }
     #endregion

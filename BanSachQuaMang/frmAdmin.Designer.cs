@@ -64,8 +64,8 @@
             this.dtgvAdmin = new System.Windows.Forms.DataGridView();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.btnViewAccount = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
@@ -95,6 +95,12 @@
             this.btnViewBill = new System.Windows.Forms.Button();
             this.dtgvViewBill = new System.Windows.Forms.DataGridView();
             this.btnResetPass = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.btnPreviours = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpControl.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -468,28 +474,30 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.textBox5);
-            this.panel20.Controls.Add(this.button6);
+            this.panel20.Controls.Add(this.label9);
+            this.panel20.Controls.Add(this.txbSearch);
+            this.panel20.Controls.Add(this.buttonSearch);
             this.panel20.Location = new System.Drawing.Point(590, 450);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(393, 84);
             this.panel20.TabIndex = 4;
             // 
-            // textBox5
+            // txbSearch
             // 
-            this.textBox5.Location = new System.Drawing.Point(10, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 22);
-            this.textBox5.TabIndex = 5;
+            this.txbSearch.Location = new System.Drawing.Point(9, 50);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(250, 22);
+            this.txbSearch.TabIndex = 5;
             // 
-            // button6
+            // buttonSearch
             // 
-            this.button6.Location = new System.Drawing.Point(285, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 78);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Xem";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonSearch.Location = new System.Drawing.Point(285, 3);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(102, 78);
+            this.buttonSearch.TabIndex = 4;
+            this.buttonSearch.Text = "Tìm kiếm";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // panel19
             // 
@@ -653,6 +661,11 @@
             // 
             // tpRevenue
             // 
+            this.tpRevenue.Controls.Add(this.textBox1);
+            this.tpRevenue.Controls.Add(this.btnNext);
+            this.tpRevenue.Controls.Add(this.btnLast);
+            this.tpRevenue.Controls.Add(this.btnPreviours);
+            this.tpRevenue.Controls.Add(this.btnFirst);
             this.tpRevenue.Controls.Add(this.panel2);
             this.tpRevenue.Controls.Add(this.panel1);
             this.tpRevenue.Location = new System.Drawing.Point(4, 25);
@@ -668,7 +681,7 @@
             this.panel2.Controls.Add(this.dtgvBill);
             this.panel2.Location = new System.Drawing.Point(4, 44);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(978, 494);
+            this.panel2.Size = new System.Drawing.Size(978, 478);
             this.panel2.TabIndex = 1;
             // 
             // dtgvBill
@@ -678,7 +691,7 @@
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 51;
             this.dtgvBill.RowTemplate.Height = 24;
-            this.dtgvBill.Size = new System.Drawing.Size(972, 487);
+            this.dtgvBill.Size = new System.Drawing.Size(972, 473);
             this.dtgvBill.TabIndex = 0;
             // 
             // panel1
@@ -702,16 +715,16 @@
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(642, 6);
+            this.dateTimePicker4.Location = new System.Drawing.Point(709, 6);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(237, 22);
             this.dateTimePicker4.TabIndex = 1;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(108, 6);
+            this.dateTimePicker3.Location = new System.Drawing.Point(35, 6);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(237, 22);
             this.dateTimePicker3.TabIndex = 0;
             // 
             // dateTimePicker1
@@ -756,6 +769,59 @@
             this.btnResetPass.Text = "Đặt lại mật khẩu";
             this.btnResetPass.UseVisualStyleBackColor = true;
             this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 29);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Tên tài khoản:";
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(7, 527);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(91, 41);
+            this.btnFirst.TabIndex = 2;
+            this.btnFirst.Text = "Trang đầu";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            // 
+            // btnPreviours
+            // 
+            this.btnPreviours.Location = new System.Drawing.Point(112, 527);
+            this.btnPreviours.Name = "btnPreviours";
+            this.btnPreviours.Size = new System.Drawing.Size(91, 41);
+            this.btnPreviours.TabIndex = 3;
+            this.btnPreviours.Text = "Trước";
+            this.btnPreviours.UseVisualStyleBackColor = true;
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(888, 527);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(91, 41);
+            this.btnLast.TabIndex = 4;
+            this.btnLast.Text = "Trang cuối";
+            this.btnLast.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(781, 527);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(91, 41);
+            this.btnNext.TabIndex = 3;
+            this.btnNext.Text = "Sau";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(424, 536);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 5;
             // 
             // frmAdmin
             // 
@@ -803,6 +869,7 @@
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.tpRevenue.ResumeLayout(false);
+            this.tpRevenue.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -866,7 +933,7 @@
         private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ComboBox cbCTPH;
         private System.Windows.Forms.Label label4;
@@ -878,7 +945,13 @@
         private System.Windows.Forms.ComboBox cbAccountType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbDisplayName;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button btnResetPass;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnPreviours;
+        private System.Windows.Forms.Button btnFirst;
     }
 }

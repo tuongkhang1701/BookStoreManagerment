@@ -35,6 +35,21 @@ namespace BanSachQuaMang.DAO
             }
             return null;
         }
+        public List<Account> searchAccoutByUserName(string userName)
+        {
+            List<Account> list = new List<Account>();
+
+            string query = string.Format("select * from Account where dbo.fuConvertToUnsign1(UserName) like N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", userName);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Account acc = new Account(item);
+                list.Add(acc);
+            }
+            return list;
+        }
         public bool updateAccount(string userName, string displayName, string passWord, string newPass)
         {
             int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @passWord , @displayName , @newPassWord", new object[] {userName, displayName, passWord, newPass });
