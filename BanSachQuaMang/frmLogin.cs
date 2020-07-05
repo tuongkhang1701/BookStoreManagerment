@@ -14,12 +14,20 @@ namespace BanSachQuaMang
 {
     public partial class frmLogin : Form
     {
+        #region Methods
         public frmLogin()
         {
             InitializeComponent();
         }
+        bool Login(string userName, string passWord)
+        {
 
-        #region Các xử lí
+            return AccountDAO.Instance.Login(userName, passWord);
+        }
+        
+        #endregion
+
+        #region Events
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -47,11 +55,23 @@ namespace BanSachQuaMang
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
             }
         }
-        #endregion
-        bool Login(string userName, string passWord)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-           
-            return AccountDAO.Instance.Login(userName, passWord);
+
+        }
+
+
+
+
+        #endregion
+
+        private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmSighUp frm = new frmSighUp();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            
         }
     }
 }

@@ -52,13 +52,25 @@
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\CongTyPhatHanhDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\GioHangDAO.cs" />
+    <Compile Include="DAO\HoaDonChiTietDAO.cs" />
+    <Compile Include="DAO\HoaDonChiTietsecondDAO.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
+    <Compile Include="DAO\PaymentDAO.cs" />
     <Compile Include="DAO\TacGiaDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\AccountType.cs" />
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\CongTyPhatHanh.cs" />
+    <Compile Include="DTO\GioHang.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\HoaDonChiTiet.cs" />
+    <Compile Include="DTO\HoaDonChiTietsecond.cs" />
+    <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
+    <Compile Include="DTO\Payment.cs" />
     <Compile Include="DTO\TacGia.cs" />
     <Compile Include="frmAccountProfile.cs">
       <SubType>Form</SubType>
@@ -84,6 +96,18 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSighUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSighUp.Designer.cs">
+      <DependentUpon>frmSighUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSighUp.resx">
+      <DependentUpon>frmSighUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

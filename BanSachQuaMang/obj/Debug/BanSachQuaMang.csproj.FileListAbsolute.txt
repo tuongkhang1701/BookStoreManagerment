@@ -12,3 +12,5 @@ D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csproj.
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.exe
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.pdb
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmAdmin.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmSighUp.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmPayment.resources

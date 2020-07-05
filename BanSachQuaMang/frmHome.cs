@@ -34,6 +34,8 @@ namespace BanSachQuaMang
             this.loginAccount = acc;
             changeAccount(loginAccount.Type);
             loadBook();
+            loadDemo();
+            showGioHang();
         }
         
         #region Các phương thức
@@ -42,7 +44,7 @@ namespace BanSachQuaMang
             adminToolStripMenuItem.Visible = type == 1;
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + ")";
         }
-
+        
         void loadBook()
         {
             
@@ -50,7 +52,7 @@ namespace BanSachQuaMang
             CultureInfo culture = new CultureInfo("vi-VN");
             Thread.CurrentThread.CurrentCulture = culture;
 
-            foreach (Book item in bookList)
+            /*foreach (Book item in bookList)
             {
                 ListViewItem listViewItem = new ListViewItem(item.NameBook);
                 
@@ -64,7 +66,7 @@ namespace BanSachQuaMang
                 lvTT.Items.Add(listViewItem);
 
 
-            }
+            }*/
             /*foreach (TacGia item in tacgiaList)
             {
                 
@@ -78,10 +80,30 @@ namespace BanSachQuaMang
                 lvTT.Items.Add(listViewItem);
 
             }*/
+            
+            
         }
-
-        //tạm
         
+        void showGioHang()
+        {
+            dtgvBag.DataSource = MenuDAO.Instance.getListMenuByUsername(loginAccount.UserName);
+            //int totalPrice = MenuDAO.Instance.getTotalPrice(loginAccount.UserName);
+            //txbTotalPrice.Text = totalPrice.ToString("c");
+        }
+        void ThanhToan()
+        {
+            frmPayment frm = new frmPayment(loginAccount);
+            frm.Show();
+            HoaDonDAO.Intance.insertIntoHoaDon(frm.CachTT(), loginAccount.UserName);
+            foreach (DataRow item in HoaDonChiTietDAO.Instance.getInfoOfGioHang(loginAccount.UserName).Rows)
+            {
+                HoaDonChiTietsecond hd = new HoaDonChiTietsecond(item);
+                HoaDonChiTietDAO.Instance.insertHoaDonChiTiet(hd.IDSach,hd.SoLuong,HoaDonDAO.Intance.getMaxIDHoaDon(loginAccount.UserName), loginAccount.UserName);
+            }
+            GioHangDAO.Instance.deleteGioHang(loginAccount.UserName);
+            dtgvBag.DataSource = MenuDAO.Instance.getListMenuByUsername(loginAccount.UserName);
+            
+        }
         #endregion
         #region Các xử lí
         private void trangChurToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,5 +142,60 @@ namespace BanSachQuaMang
 
 
         #endregion
+        void loadDemo()
+        {
+            
+            dtgvDemo.DataSource = BookDAO.Instance.loadBookList();
+
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            int idSach = (int)dtgvDemo.SelectedCells[0].OwningRow.Cells["ID"].Value;
+            int num = (int)nmCount.Value;
+
+            int idBag = GioHangDAO.Instance.checkBagByUsername(loginAccount.UserName);
+            if(idBag == -1)
+            {
+                GioHangDAO.Instance.insertBag(idSach, num, loginAccount.UserName);
+            }
+            else
+            {
+                GioHangDAO.Instance.insertBag(idSach, num, loginAccount.UserName);
+            }
+            showGioHang();
+        }
+
+        private void btnDeleteItem_Click(object sender, EventArgs e)
+        {
+            int idSach = (int)dtgvBag.SelectedCells[0].OwningRow.Cells["IDSach"].Value;
+            int num = (int)nmCount.Value;
+
+            int idBag = GioHangDAO.Instance.checkBagByUsername(loginAccount.UserName);
+            if (idBag == -1)
+            {
+                GioHangDAO.Instance.removeBag(idSach, num, loginAccount.UserName);
+            }
+            else
+            {
+                GioHangDAO.Instance.removeBag(idSach, num, loginAccount.UserName);
+            }
+            showGioHang();
+        }
+
+        private void nmCount_ValueChanged(object sender, EventArgs e)
+        {
+            nmCount.Maximum = Convert.ToDecimal(dtgvBag.SelectedCells[0].OwningRow.Cells["SoLuong"].Value.ToString());
+        }
+
+        private void txbTotalPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            ThanhToan();
+        }
     }
 }

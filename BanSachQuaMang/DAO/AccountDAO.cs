@@ -95,5 +95,18 @@ namespace BanSachQuaMang.DAO
 
             return result > 0;
         }
+        public bool signUpAccount(string userName, string passWord)
+        {
+            string query = string.Format("insert into Account(userName, passWord) values(N'{0}', N'{1}')", userName,passWord);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool testByUsername(string userName)
+        {
+            int result = (int)(DataProvider.Instance.ExecuteScalar(string.Format("select count(userName) from Account where userName = N'{0}'",userName)));
+
+            return result > 0;
+        }
     }
 }

@@ -412,6 +412,11 @@ namespace BanSachQuaMang
 
             accountList.DataSource = seachAccountByUserName(txbSearch.Text);
         }
+
+        private void tpControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     #endregion
 

@@ -24,7 +24,7 @@ namespace BanSachQuaMang.DAO
         public List<Book> loadBookList() 
         {
             List<Book> bookList = new List<Book>();
-            string query = "select * from Sach, CongTyPhatHanh, NCC, TacGia where Sach.IDCongTy = CongTyPhatHanh.IDCongTy AND Sach.IDNCC = NCC.IDNCC AND Sach.IDTG = TacGia.IDTG";
+            string query = "select IDSach ,TenSach, DonGia, SoTrang, SoLuong, TenCongTy, TenNCC, TenTG from Sach, CongTyPhatHanh, NCC, TacGia where Sach.IDCongTy = CongTyPhatHanh.IDCongTy AND Sach.IDNCC = NCC.IDNCC AND Sach.IDTG = TacGia.IDTG";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
@@ -72,6 +72,14 @@ namespace BanSachQuaMang.DAO
 
             }
             return bookList;
+        }
+
+        public bool addBookIntoBag()
+        {
+            string query = "";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }
