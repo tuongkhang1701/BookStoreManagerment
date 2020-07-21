@@ -19,9 +19,9 @@ namespace BanSachQuaMang
     {
         BindingSource bookList = new BindingSource();
         BindingSource accountList = new BindingSource();
+        BindingSource tacGiaList = new BindingSource();
         public Account loginAccount;
 
-        #region Method Total
         public frmAdmin()
         {
             InitializeComponent();
@@ -32,26 +32,26 @@ namespace BanSachQuaMang
         {
             dtgvAdmin.DataSource = bookList;
             dtgvAccount.DataSource = accountList;
+            dtgvTG.DataSource = tacGiaList;
 
-            
+
             /*loadTacGia();
             loadNhaCungCap();
             loadCongTyPhatHanh();*/
             loadBookList();
-            addBookBinding();
+            addBinding();
 
             loadTacGiaIntoCombobox(cbTacGia);
             loadNCCIntoCombobox(cbNCC);
             loadCTPHIntoCombobox(cbCTPH);
 
             loadAccountList();
-            addAcountBinding();
-            //loadType();
             loadTypeIntoCombobox(cbAccountType);
 
+            loadTacGiaList();
+
         }
-        
-        #endregion
+
 
         #region Method Book
         List<Book> searchBookByName(string name)
@@ -86,12 +86,20 @@ namespace BanSachQuaMang
 
 
         }
-        void addBookBinding()
+        void addBinding()
         {
+            //Binding Book
             txbBookName.DataBindings.Add(new Binding("Text", dtgvAdmin.DataSource, "NameBook", true, DataSourceUpdateMode.Never));
             txbIDAdmin.DataBindings.Add(new Binding("Text", dtgvAdmin.DataSource, "ID", true, DataSourceUpdateMode.Never));
             txbPrice.DataBindings.Add(new Binding("Text", dtgvAdmin.DataSource, "Price", true, DataSourceUpdateMode.Never));
             nmNumberPage.DataBindings.Add(new Binding("Value", dtgvAdmin.DataSource, "SoTrang", true, DataSourceUpdateMode.Never));
+
+            //Binding Account
+            txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "userName", true, DataSourceUpdateMode.Never));
+            txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "displayName", true, DataSourceUpdateMode.Never));
+
+            //Binding TacGia
+            txbTG.DataBindings.Add(new Binding("Text", dtgvTG.DataSource, "TenTG", true, DataSourceUpdateMode.Never));
         }
         void loadTacGiaIntoCombobox(ComboBox cb)
         {
@@ -217,7 +225,7 @@ namespace BanSachQuaMang
             int soTrang = (int)nmNumberPage.Value;
             int id = Convert.ToInt32(txbIDAdmin.Text);
 
-            if (BookDAO.Instance.editBook(id,name, price, soTrang, idCongTy, idNCC, idTacGia))
+            if (BookDAO.Instance.editBook(id, name, price, soTrang, idCongTy, idNCC, idTacGia))
             {
                 MessageBox.Show("Sửa thành công!");
                 loadBookList();
@@ -229,7 +237,7 @@ namespace BanSachQuaMang
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+
             int id = Convert.ToInt32(txbIDAdmin.Text);
 
             if (BookDAO.Instance.deleteBook(id))
@@ -269,11 +277,6 @@ namespace BanSachQuaMang
 
             /*dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { userN });*/
 
-        }
-        void addAcountBinding()
-        {
-            txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "userName", true, DataSourceUpdateMode.Never));
-            txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "displayName", true, DataSourceUpdateMode.Never));
         }
         void addAccount(string userName, string displayName, int type)
         {
@@ -354,7 +357,7 @@ namespace BanSachQuaMang
             int type = (cbAccountType.SelectedItem as AccountType).Type;
 
             addAccount(userName, displayName, type);
-            
+
         }
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
@@ -397,7 +400,7 @@ namespace BanSachQuaMang
             catch (Exception)
             {
 
-               
+
             }
         }
 
@@ -417,8 +420,69 @@ namespace BanSachQuaMang
         {
 
         }
+
+        #endregion
+
+        #region Methods Doanh Thu
+        void showDoanhThu(DateTime fromDate, DateTime toDate)
+        {
+            dtgvDoanhThu.DataSource = HoaDonDAO.Intance.getDoanhThu(fromDate, toDate);
+        }
+        #endregion
+
+        #region Event Doanh Thu
+
+        private void btnBillView_Click(object sender, EventArgs e)
+        {
+            showDoanhThu(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        #endregion
+
+        #region method TacGia
+        void loadTacGiaList()
+        {
+            tacGiaList.DataSource = TacGiaDAO.Instance.getTacGiaList();
+        }
+        void addTacGia(string name)
+        {
+            if (TacGiaDAO.Instance.getTacGiaByName(name))
+            {
+                MessageBox.Show("Tên tác giả đã tồn tại, vui lòng nhập lại!");
+            }
+            else
+            {
+                if (TacGiaDAO.Instance.insertTG(name))
+                {
+                    MessageBox.Show("Thêm tác giả thành công!");
+                    loadTacGiaList();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra!");
+            }
+        }
+        void searchTGByName(string name)
+        {
+            tacGiaList.DataSource = TacGiaDAO.Instance.searchTGByUserName(name);
+        }
+        #endregion
+
+        private void btnShowTG_Click(object sender, EventArgs e)
+        {
+            loadTacGiaList();
+        }
+
+        private void btnAddTG_Click(object sender, EventArgs e)
+        {
+
+            addTacGia(txbTG.Text);
+        }
+
+        private void btnSearchTG_Click(object sender, EventArgs e)
+        {
+            searchTGByName(txbSearchTG.Text);
+        }
     }
-    #endregion
+
 
 
 }

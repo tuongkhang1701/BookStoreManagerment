@@ -16,6 +16,7 @@ namespace BanSachQuaMang
 {
     public partial class frmHome : Form
     {
+        #region Variables
         private Account loginAccount;
 
         public Account LoginAccount 
@@ -26,7 +27,10 @@ namespace BanSachQuaMang
                 loginAccount = value;
             } 
         }
+        #endregion
 
+
+        #region Methods
         public frmHome(Account acc)
         {
             InitializeComponent();
@@ -36,9 +40,9 @@ namespace BanSachQuaMang
             loadBook();
             loadDemo();
             showGioHang();
+            menuStrip1.Renderer = new renderer();
         }
-        
-        #region Các phương thức
+
         void changeAccount(int type)
         {
             adminToolStripMenuItem.Visible = type == 1;
@@ -87,12 +91,16 @@ namespace BanSachQuaMang
         void showGioHang()
         {
             dtgvBag.DataSource = MenuDAO.Instance.getListMenuByUsername(loginAccount.UserName);
-            //int totalPrice = MenuDAO.Instance.getTotalPrice(loginAccount.UserName);
-            //txbTotalPrice.Text = totalPrice.ToString("c");
+            try
+            {
+                txbTotalPrice.Text = MenuDAO.Instance.getTotalPrice(loginAccount.UserName).ToString();
+            }
+            catch (Exception ex) { };
         }
         void ThanhToan()
         {
             frmPayment frm = new frmPayment(loginAccount);
+            frm.EventLoadGioHang += Frm_EventLoadGioHang;
             frm.Show();
             HoaDonDAO.Intance.insertIntoHoaDon(frm.CachTT(), loginAccount.UserName);
             foreach (DataRow item in HoaDonChiTietDAO.Instance.getInfoOfGioHang(loginAccount.UserName).Rows)
@@ -101,11 +109,28 @@ namespace BanSachQuaMang
                 HoaDonChiTietDAO.Instance.insertHoaDonChiTiet(hd.IDSach,hd.SoLuong,HoaDonDAO.Intance.getMaxIDHoaDon(loginAccount.UserName), loginAccount.UserName);
             }
             GioHangDAO.Instance.deleteGioHang(loginAccount.UserName);
-            dtgvBag.DataSource = MenuDAO.Instance.getListMenuByUsername(loginAccount.UserName);
+            
             
         }
+        void showFormHistory()
+        {
+            frmHistory frm = new frmHistory(loginAccount);
+            frm.ShowDialog();
+        }
+        
+
+        void loadDemo()
+        {
+
+            dtgvDemo.DataSource = BookDAO.Instance.loadBookList();
+
+        }
         #endregion
-        #region Các xử lí
+        #region Events
+        private void Frm_EventLoadGioHang(object sender, EventArgs e)
+        {
+            dtgvBag.DataSource = MenuDAO.Instance.getListMenuByUsername(loginAccount.UserName);
+        }
         private void trangChurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Show();
@@ -139,23 +164,13 @@ namespace BanSachQuaMang
             frm.loginAccount = loginAccount;
             frm.ShowDialog();
         }
-
-
-        #endregion
-        void loadDemo()
-        {
-            
-            dtgvDemo.DataSource = BookDAO.Instance.loadBookList();
-
-        }
-
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             int idSach = (int)dtgvDemo.SelectedCells[0].OwningRow.Cells["ID"].Value;
             int num = (int)nmCount.Value;
 
             int idBag = GioHangDAO.Instance.checkBagByUsername(loginAccount.UserName);
-            if(idBag == -1)
+            if (idBag == -1)
             {
                 GioHangDAO.Instance.insertBag(idSach, num, loginAccount.UserName);
             }
@@ -170,32 +185,59 @@ namespace BanSachQuaMang
         {
             int idSach = (int)dtgvBag.SelectedCells[0].OwningRow.Cells["IDSach"].Value;
             int num = (int)nmCount.Value;
-
+            int numreal = (int)dtgvBag.SelectedCells[0].OwningRow.Cells["SoLuong"].Value;
             int idBag = GioHangDAO.Instance.checkBagByUsername(loginAccount.UserName);
-            if (idBag == -1)
+            if (numreal < num)
+            {
+                GioHangDAO.Instance.removeBag(idSach, numreal, loginAccount.UserName);
+            }
+            
+            /*if (idBag == -1)
             {
                 GioHangDAO.Instance.removeBag(idSach, num, loginAccount.UserName);
             }
             else
             {
                 GioHangDAO.Instance.removeBag(idSach, num, loginAccount.UserName);
-            }
+            }*/
             showGioHang();
-        }
-
-        private void nmCount_ValueChanged(object sender, EventArgs e)
-        {
-            nmCount.Maximum = Convert.ToDecimal(dtgvBag.SelectedCells[0].OwningRow.Cells["SoLuong"].Value.ToString());
-        }
-
-        private void txbTotalPrice_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
             ThanhToan();
         }
+
+
+
+        #endregion
+
+        private void lịchSửĐơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showFormHistory();
+        }
+        //Change color menu
+        private class renderer : ToolStripProfessionalRenderer
+        {
+            public renderer() : base(new cols()) { }
+        }
+
+        private class cols : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                // when the menu is selected
+                get { return Color.DarkGreen; }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return Color.DarkGreen; }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return Color.DarkGreen; }
+            }
+        }
+
     }
 }

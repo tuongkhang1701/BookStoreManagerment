@@ -73,5 +73,20 @@ namespace BanSachQuaMang
             this.Show();
             
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(43, 64, 44);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            panel3.BackColor = Color.FromArgb(43, 64, 44);
+        }
+
+        private void txbUserName_TextChanged(object sender, EventArgs e)
+        {
+            txbUserName.BackColor = Color.FromArgb(43, 64, 44);
+        }
     }
 }

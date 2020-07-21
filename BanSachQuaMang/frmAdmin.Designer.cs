@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tcAdmin = new System.Windows.Forms.TabControl();
+            this.tpTacGu = new System.Windows.Forms.TabControl();
             this.tpControl = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -92,16 +92,31 @@
             this.btnPreviours = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtgvBill = new System.Windows.Forms.DataGridView();
+            this.dtgvDoanhThu = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBillView = new System.Windows.Forms.Button();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
+            this.tpTacGia = new System.Windows.Forms.TabPage();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txbSearchTG = new System.Windows.Forms.TextBox();
+            this.btnSearchTG = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btnAddTG = new System.Windows.Forms.Button();
+            this.btnDeleteTG = new System.Windows.Forms.Button();
+            this.btnEditTG = new System.Windows.Forms.Button();
+            this.btnShowTG = new System.Windows.Forms.Button();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.txbTG = new System.Windows.Forms.TextBox();
+            this.lbl111 = new System.Windows.Forms.Label();
+            this.dtgvTG = new System.Windows.Forms.DataGridView();
+            this.tpNCC = new System.Windows.Forms.TabPage();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnViewBill = new System.Windows.Forms.Button();
             this.dtgvViewBill = new System.Windows.Forms.DataGridView();
-            this.tcAdmin.SuspendLayout();
+            this.tpTacGu.SuspendLayout();
             this.tpControl.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -126,34 +141,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.tpRevenue.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDoanhThu)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tpTacGia.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvViewBill)).BeginInit();
             this.SuspendLayout();
             // 
-            // tcAdmin
+            // tpTacGu
             // 
-            this.tcAdmin.Controls.Add(this.tpControl);
-            this.tcAdmin.Controls.Add(this.tpAccount);
-            this.tcAdmin.Controls.Add(this.tpRevenue);
-            this.tcAdmin.Location = new System.Drawing.Point(4, 1);
-            this.tcAdmin.Name = "tcAdmin";
-            this.tcAdmin.SelectedIndex = 0;
-            this.tcAdmin.Size = new System.Drawing.Size(1259, 575);
-            this.tcAdmin.TabIndex = 0;
+            this.tpTacGu.Controls.Add(this.tpControl);
+            this.tpTacGu.Controls.Add(this.tpAccount);
+            this.tpTacGu.Controls.Add(this.tpRevenue);
+            this.tpTacGu.Controls.Add(this.tpTacGia);
+            this.tpTacGu.Controls.Add(this.tpNCC);
+            this.tpTacGu.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpTacGu.Location = new System.Drawing.Point(4, 1);
+            this.tpTacGu.Name = "tpTacGu";
+            this.tpTacGu.SelectedIndex = 0;
+            this.tpTacGu.Size = new System.Drawing.Size(1259, 575);
+            this.tpTacGu.TabIndex = 0;
             // 
             // tpControl
             // 
+            this.tpControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.tpControl.Controls.Add(this.panel6);
             this.tpControl.Controls.Add(this.panel4);
             this.tpControl.Controls.Add(this.panel3);
-            this.tpControl.Location = new System.Drawing.Point(4, 25);
+            this.tpControl.Location = new System.Drawing.Point(4, 28);
             this.tpControl.Name = "tpControl";
             this.tpControl.Padding = new System.Windows.Forms.Padding(3);
-            this.tpControl.Size = new System.Drawing.Size(1251, 535);
+            this.tpControl.Size = new System.Drawing.Size(1251, 543);
             this.tpControl.TabIndex = 0;
             this.tpControl.Text = "Sách";
-            this.tpControl.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -177,19 +200,23 @@
             // 
             // btnSearchAdmin
             // 
+            this.btnSearchAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnSearchAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnSearchAdmin.Location = new System.Drawing.Point(321, 10);
             this.btnSearchAdmin.Name = "btnSearchAdmin";
             this.btnSearchAdmin.Size = new System.Drawing.Size(88, 65);
             this.btnSearchAdmin.TabIndex = 6;
             this.btnSearchAdmin.Text = "Tìm";
-            this.btnSearchAdmin.UseVisualStyleBackColor = true;
+            this.btnSearchAdmin.UseVisualStyleBackColor = false;
             this.btnSearchAdmin.Click += new System.EventHandler(this.btnSearchAdmin_Click);
             // 
             // txbSearchAdmin
             // 
+            this.txbSearchAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbSearchAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbSearchAdmin.Location = new System.Drawing.Point(32, 37);
             this.txbSearchAdmin.Name = "txbSearchAdmin";
-            this.txbSearchAdmin.Size = new System.Drawing.Size(250, 22);
+            this.txbSearchAdmin.Size = new System.Drawing.Size(250, 27);
             this.txbSearchAdmin.TabIndex = 5;
             // 
             // panel4
@@ -218,6 +245,8 @@
             // 
             // nmNumberPage
             // 
+            this.nmNumberPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.nmNumberPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.nmNumberPage.Location = new System.Drawing.Point(207, 10);
             this.nmNumberPage.Maximum = new decimal(new int[] {
             100000,
@@ -225,13 +254,14 @@
             0,
             0});
             this.nmNumberPage.Name = "nmNumberPage";
-            this.nmNumberPage.Size = new System.Drawing.Size(220, 22);
+            this.nmNumberPage.Size = new System.Drawing.Size(220, 27);
             this.nmNumberPage.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Location = new System.Drawing.Point(3, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 24);
@@ -249,16 +279,19 @@
             // 
             // cbCTPH
             // 
+            this.cbCTPH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.cbCTPH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbCTPH.FormattingEnabled = true;
             this.cbCTPH.Location = new System.Drawing.Point(207, 9);
             this.cbCTPH.Name = "cbCTPH";
-            this.cbCTPH.Size = new System.Drawing.Size(220, 24);
+            this.cbCTPH.Size = new System.Drawing.Size(220, 27);
             this.cbCTPH.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 24);
@@ -278,42 +311,50 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnEdit.Location = new System.Drawing.Point(126, 5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(88, 65);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.button1.Location = new System.Drawing.Point(19, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 65);
             this.button1.TabIndex = 4;
             this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnDelete.Location = new System.Drawing.Point(340, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 65);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddAdmin
             // 
+            this.btnAddAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnAddAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnAddAdmin.Location = new System.Drawing.Point(233, 5);
             this.btnAddAdmin.Name = "btnAddAdmin";
             this.btnAddAdmin.Size = new System.Drawing.Size(89, 65);
             this.btnAddAdmin.TabIndex = 0;
             this.btnAddAdmin.Text = "Thêm";
-            this.btnAddAdmin.UseVisualStyleBackColor = true;
+            this.btnAddAdmin.UseVisualStyleBackColor = false;
             this.btnAddAdmin.Click += new System.EventHandler(this.btnAddAdmin_Click);
             // 
             // panel11
@@ -327,15 +368,18 @@
             // 
             // txbPrice
             // 
+            this.txbPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbPrice.Location = new System.Drawing.Point(207, 9);
             this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(220, 22);
+            this.txbPrice.Size = new System.Drawing.Size(220, 27);
             this.txbPrice.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 24);
@@ -353,16 +397,19 @@
             // 
             // cbNCC
             // 
+            this.cbNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.cbNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbNCC.FormattingEnabled = true;
             this.cbNCC.Location = new System.Drawing.Point(207, 9);
             this.cbNCC.Name = "cbNCC";
-            this.cbNCC.Size = new System.Drawing.Size(220, 24);
+            this.cbNCC.Size = new System.Drawing.Size(220, 27);
             this.cbNCC.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 24);
@@ -380,16 +427,19 @@
             // 
             // cbTacGia
             // 
+            this.cbTacGia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.cbTacGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbTacGia.FormattingEnabled = true;
             this.cbTacGia.Location = new System.Drawing.Point(207, 12);
             this.cbTacGia.Name = "cbTacGia";
-            this.cbTacGia.Size = new System.Drawing.Size(220, 24);
+            this.cbTacGia.Size = new System.Drawing.Size(220, 27);
             this.cbTacGia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 24);
@@ -407,15 +457,18 @@
             // 
             // txbBookName
             // 
+            this.txbBookName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbBookName.Location = new System.Drawing.Point(207, 11);
             this.txbBookName.Name = "txbBookName";
-            this.txbBookName.Size = new System.Drawing.Size(220, 22);
+            this.txbBookName.Size = new System.Drawing.Size(220, 27);
             this.txbBookName.TabIndex = 1;
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl.Location = new System.Drawing.Point(3, 9);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(104, 24);
@@ -433,10 +486,12 @@
             // 
             // txbIDAdmin
             // 
+            this.txbIDAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbIDAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbIDAdmin.Location = new System.Drawing.Point(207, 11);
             this.txbIDAdmin.Name = "txbIDAdmin";
             this.txbIDAdmin.ReadOnly = true;
-            this.txbIDAdmin.Size = new System.Drawing.Size(220, 22);
+            this.txbIDAdmin.Size = new System.Drawing.Size(220, 27);
             this.txbIDAdmin.TabIndex = 1;
             this.txbIDAdmin.TextChanged += new System.EventHandler(this.txbIDAdmin_TextChanged);
             // 
@@ -444,6 +499,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblUser.Location = new System.Drawing.Point(3, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(36, 24);
@@ -460,6 +516,7 @@
             // 
             // dtgvAdmin
             // 
+            this.dtgvAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.dtgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAdmin.Location = new System.Drawing.Point(4, 4);
             this.dtgvAdmin.Name = "dtgvAdmin";
@@ -470,16 +527,16 @@
             // 
             // tpAccount
             // 
+            this.tpAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.tpAccount.Controls.Add(this.panel20);
             this.tpAccount.Controls.Add(this.panel13);
             this.tpAccount.Controls.Add(this.panel12);
-            this.tpAccount.Location = new System.Drawing.Point(4, 25);
+            this.tpAccount.Location = new System.Drawing.Point(4, 28);
             this.tpAccount.Name = "tpAccount";
             this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(1251, 546);
+            this.tpAccount.Size = new System.Drawing.Size(1251, 543);
             this.tpAccount.TabIndex = 1;
             this.tpAccount.Text = "Tài khoản";
-            this.tpAccount.UseVisualStyleBackColor = true;
             // 
             // panel20
             // 
@@ -495,6 +552,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.Location = new System.Drawing.Point(4, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 29);
@@ -503,19 +561,21 @@
             // 
             // txbSearch
             // 
+            this.txbSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.txbSearch.Location = new System.Drawing.Point(9, 50);
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(250, 22);
+            this.txbSearch.Size = new System.Drawing.Size(250, 27);
             this.txbSearch.TabIndex = 5;
             // 
             // buttonSearch
             // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
             this.buttonSearch.Location = new System.Drawing.Point(285, 3);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(102, 78);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // panel13
@@ -535,52 +595,62 @@
             // 
             // btnAddAccount
             // 
+            this.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnAddAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnAddAccount.Location = new System.Drawing.Point(10, 358);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(102, 78);
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
-            this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // btnDeleteAccount
             // 
+            this.btnDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnDeleteAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnDeleteAccount.Location = new System.Drawing.Point(10, 260);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(102, 78);
             this.btnDeleteAccount.TabIndex = 1;
             this.btnDeleteAccount.Text = "Xóa";
-            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.UseVisualStyleBackColor = false;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnEditAccount
             // 
+            this.btnEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnEditAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnEditAccount.Location = new System.Drawing.Point(130, 260);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(102, 78);
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
-            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.UseVisualStyleBackColor = false;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnViewAccount
             // 
+            this.btnViewAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnViewAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnViewAccount.Location = new System.Drawing.Point(130, 360);
             this.btnViewAccount.Name = "btnViewAccount";
             this.btnViewAccount.Size = new System.Drawing.Size(102, 78);
             this.btnViewAccount.TabIndex = 3;
             this.btnViewAccount.Text = "Xem";
-            this.btnViewAccount.UseVisualStyleBackColor = true;
+            this.btnViewAccount.UseVisualStyleBackColor = false;
             this.btnViewAccount.Click += new System.EventHandler(this.btnViewAccount_Click);
             // 
             // btnResetPass
             // 
+            this.btnResetPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnResetPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnResetPass.Location = new System.Drawing.Point(285, 145);
             this.btnResetPass.Name = "btnResetPass";
             this.btnResetPass.Size = new System.Drawing.Size(102, 78);
             this.btnResetPass.TabIndex = 5;
             this.btnResetPass.Text = "Đặt lại mật khẩu";
-            this.btnResetPass.UseVisualStyleBackColor = true;
+            this.btnResetPass.UseVisualStyleBackColor = false;
             this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // panel17
@@ -594,16 +664,19 @@
             // 
             // cbAccountType
             // 
+            this.cbAccountType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.cbAccountType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbAccountType.FormattingEnabled = true;
             this.cbAccountType.Location = new System.Drawing.Point(154, 7);
             this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Size = new System.Drawing.Size(230, 24);
+            this.cbAccountType.Size = new System.Drawing.Size(230, 27);
             this.cbAccountType.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label7.Location = new System.Drawing.Point(3, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 24);
@@ -621,15 +694,18 @@
             // 
             // txbDisplayName
             // 
+            this.txbDisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbDisplayName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbDisplayName.Location = new System.Drawing.Point(155, 9);
             this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(230, 22);
+            this.txbDisplayName.Size = new System.Drawing.Size(230, 27);
             this.txbDisplayName.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.Location = new System.Drawing.Point(3, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 24);
@@ -647,9 +723,11 @@
             // 
             // txbUserName
             // 
+            this.txbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbUserName.Location = new System.Drawing.Point(154, 12);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(230, 22);
+            this.txbUserName.Size = new System.Drawing.Size(230, 27);
             this.txbUserName.TabIndex = 1;
             this.txbUserName.TextChanged += new System.EventHandler(this.txbUserName_TextChanged);
             // 
@@ -657,6 +735,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label8.Location = new System.Drawing.Point(3, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(146, 24);
@@ -673,6 +752,7 @@
             // 
             // dtgvAccount
             // 
+            this.dtgvAccount.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 3);
             this.dtgvAccount.Name = "dtgvAccount";
@@ -683,6 +763,7 @@
             // 
             // tpRevenue
             // 
+            this.tpRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.tpRevenue.Controls.Add(this.txbPageNum);
             this.tpRevenue.Controls.Add(this.btnNext);
             this.tpRevenue.Controls.Add(this.btnLast);
@@ -690,107 +771,286 @@
             this.tpRevenue.Controls.Add(this.btnFirst);
             this.tpRevenue.Controls.Add(this.panel2);
             this.tpRevenue.Controls.Add(this.panel1);
-            this.tpRevenue.Location = new System.Drawing.Point(4, 25);
+            this.tpRevenue.Location = new System.Drawing.Point(4, 28);
             this.tpRevenue.Name = "tpRevenue";
             this.tpRevenue.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRevenue.Size = new System.Drawing.Size(1251, 546);
+            this.tpRevenue.Size = new System.Drawing.Size(1251, 543);
             this.tpRevenue.TabIndex = 2;
             this.tpRevenue.Text = "Doanh thu";
-            this.tpRevenue.UseVisualStyleBackColor = true;
             // 
             // txbPageNum
             // 
+            this.txbPageNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbPageNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txbPageNum.Location = new System.Drawing.Point(424, 508);
             this.txbPageNum.Name = "txbPageNum";
-            this.txbPageNum.Size = new System.Drawing.Size(100, 22);
+            this.txbPageNum.Size = new System.Drawing.Size(100, 27);
             this.txbPageNum.TabIndex = 5;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(790, 499);
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnNext.Location = new System.Drawing.Point(729, 499);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(91, 41);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Sau";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(887, 499);
+            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnLast.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnLast.Location = new System.Drawing.Point(855, 499);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(91, 41);
+            this.btnLast.Size = new System.Drawing.Size(123, 41);
             this.btnLast.TabIndex = 4;
             this.btnLast.Text = "Trang cuối";
-            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.UseVisualStyleBackColor = false;
             // 
             // btnPreviours
             // 
-            this.btnPreviours.Location = new System.Drawing.Point(103, 499);
+            this.btnPreviours.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnPreviours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnPreviours.Location = new System.Drawing.Point(147, 499);
             this.btnPreviours.Name = "btnPreviours";
             this.btnPreviours.Size = new System.Drawing.Size(91, 41);
             this.btnPreviours.TabIndex = 3;
             this.btnPreviours.Text = "Trước";
-            this.btnPreviours.UseVisualStyleBackColor = true;
+            this.btnPreviours.UseVisualStyleBackColor = false;
             // 
             // btnFirst
             // 
+            this.btnFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnFirst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnFirst.Location = new System.Drawing.Point(6, 499);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(91, 41);
+            this.btnFirst.Size = new System.Drawing.Size(116, 41);
             this.btnFirst.TabIndex = 2;
             this.btnFirst.Text = "Trang đầu";
-            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dtgvBill);
+            this.panel2.Controls.Add(this.dtgvDoanhThu);
             this.panel2.Location = new System.Drawing.Point(4, 44);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(978, 449);
             this.panel2.TabIndex = 1;
             // 
-            // dtgvBill
+            // dtgvDoanhThu
             // 
-            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvBill.Location = new System.Drawing.Point(3, 4);
-            this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.RowHeadersWidth = 51;
-            this.dtgvBill.RowTemplate.Height = 24;
-            this.dtgvBill.Size = new System.Drawing.Size(972, 442);
-            this.dtgvBill.TabIndex = 0;
+            this.dtgvDoanhThu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.dtgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDoanhThu.Location = new System.Drawing.Point(3, 4);
+            this.dtgvDoanhThu.Name = "dtgvDoanhThu";
+            this.dtgvDoanhThu.RowHeadersWidth = 51;
+            this.dtgvDoanhThu.RowTemplate.Height = 24;
+            this.dtgvDoanhThu.Size = new System.Drawing.Size(972, 442);
+            this.dtgvDoanhThu.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnBillView);
-            this.panel1.Controls.Add(this.dateTimePicker4);
-            this.panel1.Controls.Add(this.dateTimePicker3);
+            this.panel1.Controls.Add(this.dtpkToDate);
+            this.panel1.Controls.Add(this.dtpkFromDate);
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 35);
+            this.panel1.Size = new System.Drawing.Size(978, 39);
             this.panel1.TabIndex = 0;
             // 
             // btnBillView
             // 
+            this.btnBillView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnBillView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.btnBillView.Location = new System.Drawing.Point(420, 2);
             this.btnBillView.Name = "btnBillView";
-            this.btnBillView.Size = new System.Drawing.Size(118, 30);
+            this.btnBillView.Size = new System.Drawing.Size(118, 37);
             this.btnBillView.TabIndex = 2;
             this.btnBillView.Text = "Thống kê";
-            this.btnBillView.UseVisualStyleBackColor = true;
+            this.btnBillView.UseVisualStyleBackColor = false;
+            this.btnBillView.Click += new System.EventHandler(this.btnBillView_Click);
             // 
-            // dateTimePicker4
+            // dtpkToDate
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(709, 6);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(237, 22);
-            this.dateTimePicker4.TabIndex = 1;
+            this.dtpkToDate.Location = new System.Drawing.Point(709, 6);
+            this.dtpkToDate.Name = "dtpkToDate";
+            this.dtpkToDate.Size = new System.Drawing.Size(237, 27);
+            this.dtpkToDate.TabIndex = 1;
             // 
-            // dateTimePicker3
+            // dtpkFromDate
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(35, 6);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(237, 22);
-            this.dateTimePicker3.TabIndex = 0;
+            this.dtpkFromDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.dtpkFromDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.dtpkFromDate.Location = new System.Drawing.Point(35, 6);
+            this.dtpkFromDate.Name = "dtpkFromDate";
+            this.dtpkFromDate.Size = new System.Drawing.Size(237, 27);
+            this.dtpkFromDate.TabIndex = 0;
+            this.dtpkFromDate.Value = new System.DateTime(2020, 7, 10, 17, 2, 13, 0);
+            // 
+            // tpTacGia
+            // 
+            this.tpTacGia.Controls.Add(this.panel19);
+            this.tpTacGia.Controls.Add(this.panel21);
+            this.tpTacGia.Controls.Add(this.dtgvTG);
+            this.tpTacGia.Location = new System.Drawing.Point(4, 28);
+            this.tpTacGia.Name = "tpTacGia";
+            this.tpTacGia.Padding = new System.Windows.Forms.Padding(3);
+            this.tpTacGia.Size = new System.Drawing.Size(1251, 543);
+            this.tpTacGia.TabIndex = 3;
+            this.tpTacGia.Text = "Tác Giả";
+            this.tpTacGia.UseVisualStyleBackColor = true;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.panel19.Controls.Add(this.label11);
+            this.panel19.Controls.Add(this.txbSearchTG);
+            this.panel19.Controls.Add(this.btnSearchTG);
+            this.panel19.Location = new System.Drawing.Point(593, 453);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(393, 84);
+            this.panel19.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label11.Location = new System.Drawing.Point(4, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 29);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Tên tác giả:";
+            // 
+            // txbSearchTG
+            // 
+            this.txbSearchTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbSearchTG.Location = new System.Drawing.Point(9, 50);
+            this.txbSearchTG.Name = "txbSearchTG";
+            this.txbSearchTG.Size = new System.Drawing.Size(250, 27);
+            this.txbSearchTG.TabIndex = 5;
+            // 
+            // btnSearchTG
+            // 
+            this.btnSearchTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnSearchTG.Location = new System.Drawing.Point(285, 3);
+            this.btnSearchTG.Name = "btnSearchTG";
+            this.btnSearchTG.Size = new System.Drawing.Size(102, 78);
+            this.btnSearchTG.TabIndex = 4;
+            this.btnSearchTG.Text = "Tìm kiếm";
+            this.btnSearchTG.UseVisualStyleBackColor = false;
+            this.btnSearchTG.Click += new System.EventHandler(this.btnSearchTG_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.panel21.Controls.Add(this.btnAddTG);
+            this.panel21.Controls.Add(this.btnDeleteTG);
+            this.panel21.Controls.Add(this.btnEditTG);
+            this.panel21.Controls.Add(this.btnShowTG);
+            this.panel21.Controls.Add(this.panel24);
+            this.panel21.Location = new System.Drawing.Point(592, 7);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(393, 441);
+            this.panel21.TabIndex = 6;
+            // 
+            // btnAddTG
+            // 
+            this.btnAddTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnAddTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnAddTG.Location = new System.Drawing.Point(67, 76);
+            this.btnAddTG.Name = "btnAddTG";
+            this.btnAddTG.Size = new System.Drawing.Size(102, 78);
+            this.btnAddTG.TabIndex = 0;
+            this.btnAddTG.Text = "Thêm";
+            this.btnAddTG.UseVisualStyleBackColor = false;
+            this.btnAddTG.Click += new System.EventHandler(this.btnAddTG_Click);
+            // 
+            // btnDeleteTG
+            // 
+            this.btnDeleteTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnDeleteTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnDeleteTG.Location = new System.Drawing.Point(237, 76);
+            this.btnDeleteTG.Name = "btnDeleteTG";
+            this.btnDeleteTG.Size = new System.Drawing.Size(102, 78);
+            this.btnDeleteTG.TabIndex = 1;
+            this.btnDeleteTG.Text = "Xóa";
+            this.btnDeleteTG.UseVisualStyleBackColor = false;
+            // 
+            // btnEditTG
+            // 
+            this.btnEditTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnEditTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnEditTG.Location = new System.Drawing.Point(67, 178);
+            this.btnEditTG.Name = "btnEditTG";
+            this.btnEditTG.Size = new System.Drawing.Size(102, 78);
+            this.btnEditTG.TabIndex = 2;
+            this.btnEditTG.Text = "Sửa";
+            this.btnEditTG.UseVisualStyleBackColor = false;
+            // 
+            // btnShowTG
+            // 
+            this.btnShowTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
+            this.btnShowTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.btnShowTG.Location = new System.Drawing.Point(237, 178);
+            this.btnShowTG.Name = "btnShowTG";
+            this.btnShowTG.Size = new System.Drawing.Size(102, 78);
+            this.btnShowTG.TabIndex = 3;
+            this.btnShowTG.Text = "Xem";
+            this.btnShowTG.UseVisualStyleBackColor = false;
+            this.btnShowTG.Click += new System.EventHandler(this.btnShowTG_Click);
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.txbTG);
+            this.panel24.Controls.Add(this.lbl111);
+            this.panel24.Location = new System.Drawing.Point(3, 4);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(387, 43);
+            this.panel24.TabIndex = 1;
+            // 
+            // txbTG
+            // 
+            this.txbTG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbTG.Location = new System.Drawing.Point(154, 12);
+            this.txbTG.Name = "txbTG";
+            this.txbTG.Size = new System.Drawing.Size(230, 27);
+            this.txbTG.TabIndex = 1;
+            // 
+            // lbl111
+            // 
+            this.lbl111.AutoSize = true;
+            this.lbl111.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl111.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbl111.Location = new System.Drawing.Point(3, 9);
+            this.lbl111.Name = "lbl111";
+            this.lbl111.Size = new System.Drawing.Size(122, 24);
+            this.lbl111.TabIndex = 0;
+            this.lbl111.Text = "Tên tác giả:";
+            // 
+            // dtgvTG
+            // 
+            this.dtgvTG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.dtgvTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTG.Location = new System.Drawing.Point(6, 6);
+            this.dtgvTG.Name = "dtgvTG";
+            this.dtgvTG.RowHeadersWidth = 51;
+            this.dtgvTG.RowTemplate.Height = 24;
+            this.dtgvTG.Size = new System.Drawing.Size(580, 525);
+            this.dtgvTG.TabIndex = 5;
+            // 
+            // tpNCC
+            // 
+            this.tpNCC.Location = new System.Drawing.Point(4, 28);
+            this.tpNCC.Name = "tpNCC";
+            this.tpNCC.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNCC.Size = new System.Drawing.Size(1251, 543);
+            this.tpNCC.TabIndex = 4;
+            this.tpNCC.Text = "Nhà cung cấp";
+            this.tpNCC.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -830,11 +1090,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 578);
-            this.Controls.Add(this.tcAdmin);
+            this.Controls.Add(this.tpTacGu);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí";
-            this.tcAdmin.ResumeLayout(false);
+            this.tpTacGu.ResumeLayout(false);
             this.tpControl.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -872,8 +1132,15 @@
             this.tpRevenue.ResumeLayout(false);
             this.tpRevenue.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDoanhThu)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.tpTacGia.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvViewBill)).EndInit();
             this.ResumeLayout(false);
 
@@ -881,7 +1148,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tcAdmin;
+        private System.Windows.Forms.TabControl tpTacGu;
         private System.Windows.Forms.TabPage tpControl;
         private System.Windows.Forms.TabPage tpAccount;
         private System.Windows.Forms.Panel panel6;
@@ -916,10 +1183,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnViewBill;
         private System.Windows.Forms.DataGridView dtgvViewBill;
-        private System.Windows.Forms.DataGridView dtgvBill;
+        private System.Windows.Forms.DataGridView dtgvDoanhThu;
         private System.Windows.Forms.Button btnBillView;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpkToDate;
+        private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Button btnViewAccount;
@@ -954,5 +1221,20 @@
         private System.Windows.Forms.Button btnPreviours;
         private System.Windows.Forms.Button btnFirst;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tpTacGia;
+        private System.Windows.Forms.TabPage tpNCC;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txbSearchTG;
+        private System.Windows.Forms.Button btnSearchTG;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Button btnAddTG;
+        private System.Windows.Forms.Button btnDeleteTG;
+        private System.Windows.Forms.Button btnEditTG;
+        private System.Windows.Forms.Button btnShowTG;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.TextBox txbTG;
+        private System.Windows.Forms.Label lbl111;
+        private System.Windows.Forms.DataGridView dtgvTG;
     }
 }

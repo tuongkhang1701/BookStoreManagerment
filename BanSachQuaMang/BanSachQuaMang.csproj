@@ -52,7 +52,9 @@
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\CongTyPhatHanhDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DoanhThuDAO.cs" />
     <Compile Include="DAO\GioHangDAO.cs" />
+    <Compile Include="DAO\HistoryDAO.cs" />
     <Compile Include="DAO\HoaDonChiTietDAO.cs" />
     <Compile Include="DAO\HoaDonChiTietsecondDAO.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
@@ -64,7 +66,9 @@
     <Compile Include="DTO\AccountType.cs" />
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\CongTyPhatHanh.cs" />
+    <Compile Include="DTO\DoanhThu.cs" />
     <Compile Include="DTO\GioHang.cs" />
+    <Compile Include="DTO\History.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\HoaDonChiTiet.cs" />
     <Compile Include="DTO\HoaDonChiTietsecond.cs" />
@@ -83,6 +87,12 @@
     </Compile>
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -108,12 +118,6 @@
     <Compile Include="frmSighUp.Designer.cs">
       <DependentUpon>frmSighUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAccountProfile.resx">
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -134,9 +141,6 @@
     <EmbeddedResource Include="frmSighUp.resx">
       <DependentUpon>frmSighUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,6 +149,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +164,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\bgLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\color.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

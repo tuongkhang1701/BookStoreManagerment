@@ -5,7 +5,6 @@ D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csprojA
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmAccountProfile.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmHome.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmLogin.resources
-D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.MainForm.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.Properties.Resources.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csproj.GenerateResource.cache
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.csproj.CoreCompileInputs.cache
@@ -14,3 +13,4 @@ D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.pdb
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmAdmin.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmSighUp.resources
 D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmPayment.resources
+D:\UngDungPhamMem\BanSachQuaMang\BanSachQuaMang\obj\Debug\BanSachQuaMang.frmHistory.resources

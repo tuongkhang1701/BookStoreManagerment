@@ -63,16 +63,20 @@
             // 
             // txbUserName
             // 
-            this.txbUserName.Location = new System.Drawing.Point(224, 10);
+            this.txbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbUserName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbUserName.Location = new System.Drawing.Point(224, 8);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(272, 22);
+            this.txbUserName.Size = new System.Drawing.Size(272, 30);
             this.txbUserName.TabIndex = 1;
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblUser.Location = new System.Drawing.Point(18, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(159, 24);
@@ -86,20 +90,24 @@
             this.panel1.Location = new System.Drawing.Point(12, 111);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(507, 43);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 3;
             // 
             // txbPassWord
             // 
-            this.txbPassWord.Location = new System.Drawing.Point(224, 10);
+            this.txbPassWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbPassWord.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbPassWord.Location = new System.Drawing.Point(224, 8);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(272, 22);
-            this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.Size = new System.Drawing.Size(272, 30);
+            this.txbPassWord.TabIndex = 3;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(18, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 24);
@@ -117,16 +125,20 @@
             // 
             // txbNewPW
             // 
-            this.txbNewPW.Location = new System.Drawing.Point(224, 11);
+            this.txbNewPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbNewPW.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNewPW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbNewPW.Location = new System.Drawing.Point(224, 9);
             this.txbNewPW.Name = "txbNewPW";
-            this.txbNewPW.Size = new System.Drawing.Size(272, 22);
-            this.txbNewPW.TabIndex = 1;
+            this.txbNewPW.Size = new System.Drawing.Size(272, 30);
+            this.txbNewPW.TabIndex = 4;
             this.txbNewPW.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Location = new System.Drawing.Point(18, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 24);
@@ -144,16 +156,20 @@
             // 
             // txbReNewPW
             // 
-            this.txbReNewPW.Location = new System.Drawing.Point(224, 10);
+            this.txbReNewPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbReNewPW.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbReNewPW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbReNewPW.Location = new System.Drawing.Point(224, 8);
             this.txbReNewPW.Name = "txbReNewPW";
-            this.txbReNewPW.Size = new System.Drawing.Size(272, 22);
-            this.txbReNewPW.TabIndex = 1;
+            this.txbReNewPW.Size = new System.Drawing.Size(272, 30);
+            this.txbReNewPW.TabIndex = 5;
             this.txbReNewPW.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(18, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 24);
@@ -162,23 +178,25 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
             this.btnUpdate.Location = new System.Drawing.Point(312, 270);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 48);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(418, 270);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 48);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel5
@@ -188,19 +206,23 @@
             this.panel5.Location = new System.Drawing.Point(12, 62);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(507, 43);
-            this.panel5.TabIndex = 7;
+            this.panel5.TabIndex = 2;
             // 
             // txbDisplayName
             // 
-            this.txbDisplayName.Location = new System.Drawing.Point(224, 10);
+            this.txbDisplayName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
+            this.txbDisplayName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDisplayName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txbDisplayName.Location = new System.Drawing.Point(224, 8);
             this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(272, 22);
-            this.txbDisplayName.TabIndex = 1;
+            this.txbDisplayName.Size = new System.Drawing.Size(272, 30);
+            this.txbDisplayName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(18, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 24);
@@ -212,6 +234,7 @@
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(531, 335);
             this.Controls.Add(this.panel5);
