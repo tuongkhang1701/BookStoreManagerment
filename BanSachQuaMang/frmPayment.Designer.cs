@@ -83,6 +83,7 @@
             this.btnBack.TabIndex = 14;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnConfirm
             // 
@@ -95,6 +96,7 @@
             this.btnConfirm.TabIndex = 15;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // frmPayment
             // 

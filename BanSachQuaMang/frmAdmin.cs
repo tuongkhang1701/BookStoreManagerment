@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace BanSachQuaMang
         BindingSource bookList = new BindingSource();
         BindingSource accountList = new BindingSource();
         BindingSource tacGiaList = new BindingSource();
+        BindingSource NCCList = new BindingSource();
+        BindingSource CTPHList = new BindingSource();
         public Account loginAccount;
 
         public frmAdmin()
@@ -30,9 +33,30 @@ namespace BanSachQuaMang
         }
         void load()
         {
+            dtgvAdmin.Anchor = AnchorStyles.Top;
+            dtgvAdmin.Anchor = AnchorStyles.Left;
+            dtgvAdmin.Dock = DockStyle.Fill;
             dtgvAdmin.DataSource = bookList;
+
+            dtgvAccount.Anchor = AnchorStyles.Top;
+            dtgvAccount.Anchor = AnchorStyles.Left;
+            dtgvAccount.Dock = DockStyle.Fill;
             dtgvAccount.DataSource = accountList;
+
+            dtgvTG.Anchor = AnchorStyles.Top;
+            dtgvTG.Anchor = AnchorStyles.Left;
+            dtgvTG.Dock = DockStyle.Fill;
             dtgvTG.DataSource = tacGiaList;
+
+            dtgvNCC.Anchor = AnchorStyles.Top;
+            dtgvNCC.Anchor = AnchorStyles.Left;
+            dtgvNCC.Dock = DockStyle.Fill;
+            dtgvNCC.DataSource = NCCList;
+
+            dtgvCTPH.Anchor = AnchorStyles.Top;
+            dtgvCTPH.Anchor = AnchorStyles.Left;
+            dtgvCTPH.Dock = DockStyle.Fill;
+            dtgvCTPH.DataSource = CTPHList;
 
 
             /*loadTacGia();
@@ -50,6 +74,10 @@ namespace BanSachQuaMang
 
             loadTacGiaList();
 
+            loadNCCList();
+
+            loadCTPHList();
+
         }
 
 
@@ -59,24 +87,7 @@ namespace BanSachQuaMang
             List<Book> listBook = BookDAO.Instance.searchBookByName(name);
             return listBook;
         }
-        /*void loadTacGia()
-        {
-            List<TacGia> listTacGia = TacGiaDAO.Instance.getTacGiaList();
-            cbTacGia.DataSource = listTacGia;
-            cbTacGia.DisplayMember = "TenTG";
-        }
-        void loadNhaCungCap()
-        {
-            List<NhaCungCap> listNCC = NhaCungCapDAO.Instance.getNCCList();
-            cbNCC.DataSource = listNCC;
-            cbNCC.DisplayMember = "TenNCC";
-        }
-        void loadCongTyPhatHanh()
-        {
-            List<CongTyPhatHanh> CTPH = CongTyPhatHanhDAO.Instance.getCTPHList();
-            cbCTPH.DataSource = CTPH;
-            cbCTPH.DisplayMember = "TenCongTy";
-        }*/
+
         void loadBookList()
         {
 
@@ -100,6 +111,12 @@ namespace BanSachQuaMang
 
             //Binding TacGia
             txbTG.DataBindings.Add(new Binding("Text", dtgvTG.DataSource, "TenTG", true, DataSourceUpdateMode.Never));
+
+            ////Binding Nhà cung cấp
+            txbNCC.DataBindings.Add(new Binding("Text", dtgvNCC.DataSource, "TenNCC", true, DataSourceUpdateMode.Never));
+
+            ////Binding cÔNG TY PHÁT HÀNH
+            txbCTPH.DataBindings.Add(new Binding("Text", dtgvCTPH.DataSource, "TenCongTy", true, DataSourceUpdateMode.Never));
         }
         void loadTacGiaIntoCombobox(ComboBox cb)
         {
@@ -466,6 +483,7 @@ namespace BanSachQuaMang
         }
         #endregion
 
+        #region Events Tác giả
         private void btnShowTG_Click(object sender, EventArgs e)
         {
             loadTacGiaList();
@@ -481,7 +499,209 @@ namespace BanSachQuaMang
         {
             searchTGByName(txbSearchTG.Text);
         }
+        private void btnDeleteTG_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvTG.SelectedCells[0].OwningRow.Cells["IDTG"].Value;
+
+            if (TacGiaDAO.Instance.deleteTG(id))
+            {
+                MessageBox.Show("Xóa tác giả thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa!");
+            }
+            loadTacGiaList();
+        }
+
+        private void btnEditTG_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvTG.SelectedCells[0].OwningRow.Cells["IDTG"].Value;
+            string tenTG = txbTG.Text;
+
+            if (TacGiaDAO.Instance.editTG(id, tenTG))
+            {
+                MessageBox.Show("Sửa tác giả thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa!");
+            }
+            loadTacGiaList();
+        }
+        #endregion
+
+        #region Methods Nhà cung cấp
+        void loadNCCList()
+        {
+            NCCList.DataSource = NhaCungCapDAO.Instance.getNCCList();
+        }
+        void addNCC(string name)
+        {
+            if (NhaCungCapDAO.Instance.getNCCByName(name))
+            {
+                MessageBox.Show("Tên nhà cung cấp đã tồn tại, vui lòng nhập lại!");
+            }
+            else
+            {
+                if (NhaCungCapDAO.Instance.insertNCC(name))
+                {
+                    MessageBox.Show("Thêm tác giả thành công!");
+                    loadNCCList();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra!");
+            }
+        }
+        void searchNCCByName(string name)
+        {
+            NCCList.DataSource = NhaCungCapDAO.Instance.searchNCCByUserName(name);
+        }
+
+        void deleteNCC(int id)
+        {
+            if (NhaCungCapDAO.Instance.deleteNCC(id))
+            {
+                MessageBox.Show("Xóa nhà cung cấp thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa!");
+            }
+            loadNCCList();
+        }
+
+        #endregion
+
+        #region Events NCC
+        private void btnAddNCC_Click(object sender, EventArgs e)
+        {
+            string tenNCC = txbNCC.Text;
+            addNCC(tenNCC);
+        }
+
+        private void btnDeleteNCC_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvNCC.SelectedCells[0].OwningRow.Cells["IDCTPH"].Value;
+            deleteNCC(id);
+        }
+
+        private void btnEditNCC_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvNCC.SelectedCells[0].OwningRow.Cells["IDCTPH"].Value;
+            string tenNCC = txbNCC.Text;
+
+            if (NhaCungCapDAO.Instance.editNCC(id, tenNCC))
+            {
+                MessageBox.Show("Sửa tác giả thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa!");
+            }
+            loadNCCList();
+        }
+
+        private void btnViewNCC_Click(object sender, EventArgs e)
+        {
+            loadNCCList();
+        }
+
+        private void btnSearchNCC_Click(object sender, EventArgs e)
+        {
+            string tenNCC = txbSearchNCC.Text;
+            searchNCCByName(tenNCC);
+        }
+
+        #endregion
+
+        #region Methods Công ty phát hành
+        void loadCTPHList()
+        {
+
+            CTPHList.DataSource = CongTyPhatHanhDAO.Instance.getCTPHList();
+        }
+        void addCTPH(string name)
+        {
+            if (CongTyPhatHanhDAO.Instance.getCTPHByName(name))
+            {
+                MessageBox.Show("Tên nhà cung cấp đã tồn tại, vui lòng nhập lại!");
+            }
+            else
+            {
+                if (CongTyPhatHanhDAO.Instance.insertCTPH(name))
+                {
+                    MessageBox.Show("Thêm tác giả thành công!");
+                    loadCTPHList();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra!");
+            }
+        }
+        void searchCTPHByName(string name)
+        {
+            CTPHList.DataSource = CongTyPhatHanhDAO.Instance.searchCTPHByUserName(name);
+        }
+
+        void deleteCTPH(int id)
+        {
+            if (CongTyPhatHanhDAO.Instance.deleteCTPH(id))
+            {
+                MessageBox.Show("Xóa công ty phát hành thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa!");
+            }
+            loadCTPHList();
+        }
+
+        #endregion
+
+        #region Events Công ty phát hành
+        private void btnAddCTPH_Click(object sender, EventArgs e)
+        {
+            string tenCTPH = txbCTPH.Text;
+            addCTPH(tenCTPH);
+        }
+
+        private void btnDeleteCTPH_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvCTPH.SelectedCells[0].OwningRow.Cells["IDCongTy"].Value;
+            deleteCTPH(id);
+        }
+
+        private void btnEditCTPH_Click(object sender, EventArgs e)
+        {
+            int id = (int)dtgvCTPH.SelectedCells[0].OwningRow.Cells["IDCongTy"].Value;
+            string tenCTPH = txbCTPH.Text;
+
+            if (CongTyPhatHanhDAO.Instance.editCTPH(id, tenCTPH))
+            {
+                MessageBox.Show("Sửa công ty phát hành thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa!");
+            }
+            loadCTPHList();
+        }
+
+        private void btnViewCTPH_Click(object sender, EventArgs e)
+        {
+            loadCTPHList();
+        }
+
+        private void btnSearchCTPH_Click(object sender, EventArgs e)
+        {
+            string tenCTPH = txbSearchCTPH.Text;
+            searchCTPHByName(tenCTPH);
+        }
+        #endregion
+
     }
+
+
 
 
 

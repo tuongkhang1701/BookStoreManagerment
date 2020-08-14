@@ -81,9 +81,8 @@ namespace BanSachQuaMang.DAO
         }
         public bool deleteAccount(string userName) 
         {
-            string query = string.Format("delete Account where userName = N'{0}'", userName);
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_DeleteAccount @username ", new object[] { userName });
 
             return result > 0;
         }

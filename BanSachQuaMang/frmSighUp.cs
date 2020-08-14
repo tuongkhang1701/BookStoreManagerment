@@ -85,7 +85,7 @@ namespace BanSachQuaMang
             this.Close();
         }
 
-        private void btnSignUp_Click_1(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
@@ -104,7 +104,6 @@ namespace BanSachQuaMang
             else
                 testByUsername(userName);
         }
-
 
     }
 }

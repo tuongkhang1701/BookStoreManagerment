@@ -56,35 +56,6 @@ namespace BanSachQuaMang
             CultureInfo culture = new CultureInfo("vi-VN");
             Thread.CurrentThread.CurrentCulture = culture;
 
-            /*foreach (Book item in bookList)
-            {
-                ListViewItem listViewItem = new ListViewItem(item.NameBook);
-                
-                listViewItem.SubItems.Add(item.SoTrang.ToString());
-                listViewItem.SubItems.Add(item.Price.ToString());
-                listViewItem.SubItems.Add(item.TenTG);
-                listViewItem.SubItems.Add(item.TenCongTy);
-                listViewItem.SubItems.Add(item.TenNCC);
-                
-                
-                lvTT.Items.Add(listViewItem);
-
-
-            }*/
-            /*foreach (TacGia item in tacgiaList)
-            {
-                
-                ListViewItem listViewItem = new ListViewItem(item.TenTG);
-
-                listViewItem.SubItems.Add(item.TenTG.ToString());
-                //listViewItem.SubItems.Add(item.TenTG);
-                //listViewItem.SubItems.Add(item.TenCongTy);
-                //listViewItem.SubItems.Add(item.Price.ToString("c"));
-                
-                lvTT.Items.Add(listViewItem);
-
-            }*/
-            
             
         }
         
@@ -187,9 +158,9 @@ namespace BanSachQuaMang
             int num = (int)nmCount.Value;
             int numreal = (int)dtgvBag.SelectedCells[0].OwningRow.Cells["SoLuong"].Value;
             int idBag = GioHangDAO.Instance.checkBagByUsername(loginAccount.UserName);
-            if (numreal < num)
+            if (numreal > num)
             {
-                GioHangDAO.Instance.removeBag(idSach, numreal, loginAccount.UserName);
+                GioHangDAO.Instance.removeBag(idSach, num, loginAccount.UserName);
             }
             
             /*if (idBag == -1)

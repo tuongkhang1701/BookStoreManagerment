@@ -45,5 +45,51 @@ namespace BanSachQuaMang.DAO
             }
             return congTy;
         }
+        public bool getCTPHByName(string name)
+        {
+            int data = (int)DataProvider.Instance.ExecuteScalar("select COUNT(IDCongTy) from CongTyPhatHanh where TenCongTy = N'" + name + "'");
+
+
+            return data > 0;
+
+        }
+
+        public bool insertCTPH(string name)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("insert into CongTyPhatHanh (TenCongTy) values (N'" + name + "')");
+            return result > 0;
+        }
+
+        public bool editCTPH(int idCTPH, string tenCTPH)
+        {
+            string query = string.Format("UPDATE CongTyPhatHanh SET TenCongTy = N'{0}' WHERE IDCongTy = {1}", tenCTPH, idCTPH);
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool deleteCTPH(int id)
+        {
+
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_deleteCTPH @idCTPH ", new object[] { id });
+
+            return result > 0;
+        }
+
+        public List<CongTyPhatHanh> searchCTPHByUserName(string userName)
+        {
+            List<CongTyPhatHanh> list = new List<CongTyPhatHanh>();
+
+            string query = string.Format("select * from CongTyPhatHanh where dbo.fuConvertToUnsign1(TenCongTy) like N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", userName);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                CongTyPhatHanh acc = new CongTyPhatHanh(item);
+                list.Add(acc);
+            }
+            return list;
+        }
     }
 }

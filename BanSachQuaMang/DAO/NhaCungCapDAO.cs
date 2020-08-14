@@ -47,5 +47,52 @@ namespace BanSachQuaMang.DAO
             }
             return ncc;
         }
+
+        public bool getNCCByName(string name)
+        {
+            int data = (int)DataProvider.Instance.ExecuteScalar("select COUNT(IDNCC) from NCC where TenNCC = N'" + name + "'");
+
+
+            return data > 0;
+
+        }
+
+        public bool insertNCC(string name)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("insert into NCC (TenNCC) values (N'" + name + "')");
+            return result > 0;
+        }
+
+        public bool editNCC(int idNCC, string tenNCC)
+        {
+            string query = string.Format("UPDATE NCC SET TenNCC = N'{0}' WHERE IDNCC = {1}", tenNCC, idNCC);
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool deleteNCC(int id)
+        {
+
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_deleteNCC @idNCC ", new object[] { id });
+
+            return result > 0;
+        }
+
+        public List<NhaCungCap> searchNCCByUserName(string userName)
+        {
+            List<NhaCungCap> list = new List<NhaCungCap>();
+
+            string query = string.Format("select * from NCC where dbo.fuConvertToUnsign1(TenNCC) like N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", userName);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                NhaCungCap acc = new NhaCungCap(item);
+                list.Add(acc);
+            }
+            return list;
+        }
     }
 }

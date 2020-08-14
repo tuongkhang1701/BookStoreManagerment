@@ -37,21 +37,23 @@
             // 
             // dtgvHistory
             // 
+            this.dtgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
             this.dtgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvHistory.Location = new System.Drawing.Point(0, 0);
-            this.dtgvHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvHistory.Name = "dtgvHistory";
             this.dtgvHistory.RowHeadersWidth = 51;
             this.dtgvHistory.RowTemplate.Height = 24;
-            this.dtgvHistory.Size = new System.Drawing.Size(780, 531);
+            this.dtgvHistory.Size = new System.Drawing.Size(613, 407);
             this.dtgvHistory.TabIndex = 0;
             // 
             // btnDetail
             // 
             this.btnDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
-            this.btnDetail.Location = new System.Drawing.Point(528, 537);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetail.Location = new System.Drawing.Point(350, 349);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(120, 43);
             this.btnDetail.TabIndex = 1;
@@ -62,8 +64,8 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
-            this.btnExit.Location = new System.Drawing.Point(660, 538);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(480, 349);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(120, 43);
             this.btnExit.TabIndex = 3;
@@ -74,8 +76,8 @@
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(148)))), ((int)(((byte)(127)))));
-            this.btnBack.Location = new System.Drawing.Point(34, 537);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(32, 349);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 43);
             this.btnBack.TabIndex = 4;
@@ -89,13 +91,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(784, 594);
+            this.ClientSize = new System.Drawing.Size(613, 407);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.dtgvHistory);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lịch sử đặt hàng";

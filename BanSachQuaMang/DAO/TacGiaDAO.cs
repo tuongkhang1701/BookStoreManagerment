@@ -82,11 +82,10 @@ namespace BanSachQuaMang.DAO
 
             return result > 0;
         }
-        public bool deleteBook(int id)
+        public bool deleteTG(int id)
         {
-            string query = "delete TacGia where IDTG = " + id;
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_DELETETacGia @idTG ", new object[] { id });
 
             return result > 0;
         }
